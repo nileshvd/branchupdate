@@ -1,0 +1,16 @@
+Name: WorkflowForBranchUpdateGitTest
+SchemaVersion: "1.0"
+
+# Optional - Set automatic triggers.
+Triggers:
+  - Type: Push
+    Branches:
+      - main
+
+# Required - Define action configurations.
+Actions:
+    Build:
+        Identifier: aws/workflows-mock-gamma@v1
+        Configuration:
+            MillisecondDelay: 10000
+            Result: "Succeed"
