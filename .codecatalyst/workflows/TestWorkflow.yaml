@@ -1,0 +1,20 @@
+Name: TestWorkflow
+SchemaVersion: "1.0"
+
+# Optional - Set automatic triggers.
+Triggers:
+  - Type: Push
+    Branches:
+      - branchupdate
+
+# Required - Define action configurations.
+Actions:
+    MockAction:
+        Identifier: aws/workflows-mock-gamma@v1
+        Inputs:
+            Sources:
+            - WorkflowSource
+        Configuration:
+            MillisecondDelay: 30
+            Result: "Succeed"
+    
